@@ -9,7 +9,7 @@ export const Info: FC = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   return (
     <div className={styles.container}>
-      <InfoTitle isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
+      <InfoTitle />
       <Cards />
     </div>
   );

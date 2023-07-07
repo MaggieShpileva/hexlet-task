@@ -7,12 +7,7 @@ import { selectUserData } from "../../../../Redux/user-data/selector";
 import { Button } from "../../../Button";
 import styles from "./index.module.scss";
 
-type Props = {
-  isOpenModal: boolean;
-  setIsOpenModal: Dispatch<React.SetStateAction<boolean>>;
-};
-
-export const InfoTitle: FC<Props> = ({ isOpenModal, setIsOpenModal }) => {
+export const InfoTitle: FC = () => {
   const [userName, setUserName] = useState(localStorage.getItem("name"));
   const navigation = useNavigate();
   const put = useDispatch();
