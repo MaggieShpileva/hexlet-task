@@ -15,13 +15,17 @@ export const Header: FC = () => {
 
   const handleClickExit = () => {
     localStorage.removeItem("name");
-    navigation("/");
     put(exitUser());
+    navigation("/");
+  };
+
+  const handleClickEnter = () => {
+    put(openModal());
   };
 
   useEffect(() => {
-    if (userData.data !== undefined) {
-      setUserName(userData.data.name);
+    if (userData.data !== undefined || userData.data !== null) {
+      setUserName(userData.data?.name!);
     }
   }, [userData]);
 
@@ -34,7 +38,7 @@ export const Header: FC = () => {
         <div className={styles.contacts}>
           <a href="/contacts">Контакты</a>
         </div>
-        {userName !== null ? (
+        {userName !== undefined ? (
           <Button
             type={"header"}
             className={styles.exit_button}
@@ -46,9 +50,7 @@ export const Header: FC = () => {
           <Button
             type={"header"}
             className={styles.enter_button}
-            onClick={() => {
-              put(openModal());
-            }}
+            onClick={handleClickEnter}
           >
             Войти
           </Button>

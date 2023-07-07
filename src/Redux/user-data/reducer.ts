@@ -6,8 +6,8 @@ import { userData } from "../../types";
 type Actions = ReturnType<InferValueTypes<typeof actions>>;
 
 export type UserDataT = {
-  isLoading: boolean;
-  data?: userData;
+  isLoading?: boolean;
+  data?: userData | null;
   message?: string;
 };
 
@@ -33,7 +33,7 @@ export const userDataReducer = (state = initialState, action: Actions) => {
       return { message: "Неправильный пароль", isLoading: false };
 
     case USER_DATA.EXIT_USER:
-      return { isLoading: false };
+      return { data: null };
     default:
       return state;
   }

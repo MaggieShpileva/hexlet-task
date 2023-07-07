@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { put } from "redux-saga/effects";
 import { selectModal } from "../../Redux/modal-window/selector";
@@ -12,6 +12,7 @@ export const PersonalAccount = () => {
   const navigation = useNavigate();
   const userData = localStorage.getItem("name");
   const { isOpen } = useSelector(selectModal);
+  const put = useDispatch();
 
   const handleClick = () => {
     localStorage.removeItem("name");

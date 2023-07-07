@@ -36,7 +36,6 @@ export const Modal: FC = () => {
 
   //результат авторизации
   useEffect(() => {
-    console.log(userData);
     if (userData.data !== undefined) {
       navigation("/account");
       put(closeModal());
