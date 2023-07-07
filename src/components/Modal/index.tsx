@@ -29,7 +29,6 @@ export const Modal: FC = () => {
       setIsLogin(true);
       setIsPassword(true);
       put(getUserData({ login: login, password: password }));
-      put(closeModal());
       setLogin("");
       setPassword("");
     }
@@ -37,8 +36,10 @@ export const Modal: FC = () => {
 
   //результат авторизации
   useEffect(() => {
-    if (userData?.data !== undefined) {
+    console.log(userData);
+    if (userData.data !== undefined) {
       navigation("/account");
+      put(closeModal());
     } else if (userData?.message) {
       setError(userData?.message!);
     }

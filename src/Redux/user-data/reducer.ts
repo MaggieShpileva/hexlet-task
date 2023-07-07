@@ -21,7 +21,7 @@ export const userDataReducer = (state = initialState, action: Actions) => {
       return { isLoading: true };
 
     case USER_DATA.GET_USER_DATA_SUCCESS:
-      return { isLoading: false, data: action.payload };
+      return { ...state, isLoading: false, data: action.payload };
 
     case USER_DATA.GET_USER_DATA_FAIL:
       return { isLoading: false };

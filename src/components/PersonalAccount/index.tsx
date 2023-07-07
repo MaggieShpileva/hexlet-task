@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { put } from "redux-saga/effects";
 import { selectModal } from "../../Redux/modal-window/selector";
+import { exitUser } from "../../Redux/user-data/action";
 import { Button } from "../Button";
 import { Header } from "../Header";
 import { Modal } from "../Modal";
@@ -13,6 +15,7 @@ export const PersonalAccount = () => {
 
   const handleClick = () => {
     localStorage.removeItem("name");
+    put(exitUser());
     navigation("/");
   };
 
@@ -37,7 +40,13 @@ export const PersonalAccount = () => {
               >
                 Выйти из аккаунта
               </Button>
-              <Button type={"secondary"} className={styles.contact_button}>
+              <Button
+                type={"secondary"}
+                className={styles.contact_button}
+                onClick={() => {
+                  navigation("/contacts");
+                }}
+              >
                 Перейти в контакты
               </Button>
             </div>

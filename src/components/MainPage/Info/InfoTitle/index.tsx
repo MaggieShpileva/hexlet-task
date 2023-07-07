@@ -38,6 +38,12 @@ export const InfoTitle: FC<Props> = ({ isOpenModal, setIsOpenModal }) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (userData.data?.name) {
+      setUserName(userData.data?.name);
+    }
+  }, [userData]);
+
   return (
     <div className={styles.help}>
       <div className={styles.title}>

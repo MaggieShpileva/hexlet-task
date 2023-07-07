@@ -24,6 +24,7 @@ export function* getUserDataSaga({
   try {
     const res: UserResult = yield call(getUserDataWorker, login, password);
     if (res.isLogin && res.isPassword) {
+      console.log(res.user);
       yield put(getUserDataSuccess(res.user));
     } else if (res.isLogin === false) {
       yield put(userNotExist());
