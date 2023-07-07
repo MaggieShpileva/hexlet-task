@@ -1,0 +1,19 @@
+@import "../../styles/mixins.scss";
+
+.container {
+  @include mobile_container {
+    padding: 100px 10px 0 11px;
+  }
+
+  @include tablet_container {
+    padding: 185px 197px 87px 197px;
+  }
+
+  p {
+    @include font-bold-xl;
+
+    @include mobile {
+      @include font-bold-l;
+    }
+  }
+}

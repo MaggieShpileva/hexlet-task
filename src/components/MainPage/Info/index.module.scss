@@ -1,0 +1,11 @@
+@import "../../../styles/mixins.scss";
+
+.container {
+  @include mobile_container {
+    padding: 0 10px 0 11px;
+  }
+
+  @include tablet_container {
+    padding: 0 197px 176px 197px;
+  }
+}

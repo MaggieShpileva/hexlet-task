@@ -1,0 +1,75 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/colors.scss";
+
+header {
+  @include mobile_container {
+    padding: 0 10px;
+  }
+
+  @include tablet_container {
+    padding: 0 70px 0 71.73px;
+  }
+
+  position: relative;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: inherit;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: $base-black;
+  }
+
+  .logo {
+    @include font-bold-m;
+    color: $base-text-color;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .contacts {
+      @include font-ligth-bold-a;
+
+      width: 95px;
+      height: 44px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color: $base-second-text-color;
+
+      @include tablet {
+        margin-right: 49px;
+      }
+    }
+
+    .enter_button {
+      @include mobile {
+        width: 106px;
+        height: 36px;
+      }
+
+      @include tablet {
+        width: 186px;
+        height: 40px;
+      }
+    }
+
+    .exit_button {
+      @include tablet {
+        width: 189px;
+        height: 40px;
+      }
+    }
+  }
+}

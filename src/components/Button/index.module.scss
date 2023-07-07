@@ -1,0 +1,37 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/colors.scss";
+
+.button {
+  @include font-bold-xs;
+
+  border-radius: 5px;
+  border: 1px solid $base-primary-color;
+  cursor: pointer;
+
+  &_secondary,
+  &_header {
+    color: $base-primary-color;
+    background-color: $base-white;
+  }
+
+  &_primary {
+    @include font-bold-xs;
+
+    color: $base-white;
+    background-color: $base-primary-color;
+  }
+
+  &_secondary {
+    @include font-bold-xs;
+  }
+
+  &_header {
+    @include font-medium-m;
+    width: 104px;
+    height: 36px;
+  }
+}
+
+[class*="button_"] {
+  @extend .button;
+}

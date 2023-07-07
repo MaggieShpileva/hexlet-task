@@ -1,0 +1,69 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    left: 5px;
+    top: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../../images/icons/password.svg");
+  }
+  span {
+    @include font-regular-xs;
+    color: $base-second-text-color;
+  }
+  .inpur_password {
+    input {
+      width: 250px;
+      height: 40px;
+      border: 0;
+      border-bottom: 1px solid $base-text-color;
+      padding-left: 45px;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .visible_password,
+    .unvisible_password {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 20px;
+      right: 8px;
+      top: 28px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 99;
+    }
+
+    .visible_password {
+      background-image: url("../../../images/icons/visibility.svg");
+    }
+
+    .unvisible_password {
+      background-image: url("../../../images/icons/visibility_off.svg");
+    }
+  }
+
+  p {
+    width: 100%;
+    height: 30px;
+    font-size: 10px;
+    position: absolute;
+    bottom: 0px;
+    color: $base-primary-color;
+  }
+}

@@ -1,0 +1,88 @@
+@import "../../../../styles/mixins.scss";
+@import "../../../../styles/colors.scss";
+
+.container {
+  width: 100%;
+
+  box-sizing: border-box;
+  display: flex;
+
+  @include mobile {
+    flex-direction: column;
+    margin-top: 11px;
+    padding: 0 11px 30px 14px;
+  }
+
+  @include tablet {
+    margin-top: 38px;
+    flex-direction: row;
+
+    & .card:not(:last-child) {
+    }
+
+    .card_0 {
+      order: 2;
+    }
+
+    .card_1 {
+      order: 0;
+      margin-right: 30px;
+    }
+
+    .card_2 {
+      order: 1;
+      margin-right: 31px;
+    }
+  }
+}
+
+.card {
+  width: 328px;
+  height: 248px;
+  padding: 35px 40px;
+  box-sizing: border-box;
+  box-shadow: 0px 13px 19px 0px #00000012;
+
+  @include mobile {
+    margin-bottom: 30px;
+  }
+
+  .image {
+    width: 72px;
+    height: 72px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 200px;
+    background-color: $base-danger-color;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .title {
+    margin: 20px 0;
+
+    h3 {
+      @include font-bold-s;
+    }
+  }
+
+  hr {
+    width: 50px;
+    height: 2px;
+    background: $base-danger-color;
+    border: none;
+  }
+
+  .text {
+    margin-top: 20px;
+
+    p {
+      @include font-regular-xs;
+
+      color: $base-second-text-color;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@import "./fonts.scss";
+@import "./colors.scss";
+
+@mixin mobile_container {
+  @media screen and (max-width: 380px) {
+    width: 375px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    @content;
+  }
+}
+
+@mixin tablet_container {
+  @media screen and (min-width: 380px) {
+    width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 380px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 380px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
+@mixin font-bold-xl {
+  font-family: "Montserrat-Bold";
+  font-size: 58px;
+  line-height: 80px;
+  letter-spacing: 0.2px;
+  cursor: default;
+}
+
+@mixin font-bold-l {
+  font-family: "Montserrat-Bold";
+  font-size: 28px;
+  line-height: 39px;
+  letter-spacing: 0.2px;
+  cursor: default;
+}
+
+@mixin font-bold-m {
+  font-family: "Montserrat-Bold";
+  font-size: 24px;
+  line-height: 39px;
+  letter-spacing: 0.2px;
+  cursor: default;
+}
+
+@mixin font-bold-s {
+  font-family: "Montserrat-Bold";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+@mixin font-bold-xs {
+  font-family: "Montserrat-Bold";
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.2px;
+}
+
+@mixin font-medium-m {
+  font-family: "Montserrat-Medium";
+  font-size: 20px;
+  line-height: 24.38px;
+  letter-spacing: 0.2px;
+  cursor: default;
+}
+
+@mixin font-regular-xs {
+  font-family: "Montserrat-Regular";
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+}
+@mixin font-ligth-bold-a {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.35px;
+}

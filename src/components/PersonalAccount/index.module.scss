@@ -1,0 +1,46 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/colors.scss";
+
+.container {
+  @include mobile_container {
+    padding: 0 10px 0 11px;
+  }
+
+  @include tablet_container {
+    padding: 100px 200px 87px 197px;
+  }
+
+  @include tablet {
+    .title {
+      padding: 41px 0;
+
+      h1 {
+        @include font-bold-xl;
+        color: $base-text-color;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        margin-top: 26px;
+
+        .exit_button {
+          width: 228px;
+          height: 52px;
+          margin-right: 10px;
+        }
+
+        .contact_button {
+          width: 239px;
+          height: 52px;
+        }
+      }
+    }
+  }
+
+  @include mobile_container {
+    padding: 100px 10px 0 11px;
+  }
+}

@@ -1,0 +1,52 @@
+@import "../../../../styles/mixins.scss";
+
+.help {
+  @include mobile {
+    padding: 18.5px 0;
+  }
+
+  @include tablet {
+    padding: 59px 0;
+  }
+
+  width: calc(100% + 5px);
+  margin-top: 38px;
+  box-sizing: border-box;
+
+  .title {
+    @include mobile {
+      width: 355px;
+      height: 89px;
+    }
+
+    @include tablet {
+      width: 727px;
+      height: 160px;
+    }
+
+    h1 {
+      @include mobile {
+        @include font-bold-l;
+      }
+
+      @include tablet {
+        @include font-bold-xl;
+      }
+    }
+  }
+
+  .buttons {
+    margin-top: 34px;
+
+    .enter_button {
+      width: 128px;
+      height: 52px;
+      margin-right: 10px;
+    }
+
+    .contact_button {
+      width: 155px;
+      height: 52px;
+    }
+  }
+}
